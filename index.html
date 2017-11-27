@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>My first Vue app</title>
+    <script src="https://unpkg.com/vue"></script>
+  </head>
+  <body>
+
+    <div id="starWarsChar">
+      {{ results.films }}
+      <h1>Name: {{ results.name }}</h1><br>
+      <h3>Species: {{ results.speciesName }}</h3> <br>
+      <h3>Gender: {{ results.gender }}</h3> <br>
+      <h3>Height: {{ results.height }} cm</h3> <br>
+      <h3>Mass: {{ results.mass }}</h3> <br>
+      <h3>Birth Year: {{ results.birth_year }}</h3> <br>
+      <h3>Eye Color: {{ results.eye_color }}</h3> <br>
+      <h3>Skin Color: {{ results.skin_color }}</h3> <br>
+      <h3>Hair Color: {{ results.hair_color }}</h3> <br>
+      <h3>Homeworld: {{ results.homeworld }}</h3> <br>
+
+      <h3>Vehicles: {{ results.vehicles }}</h3> <br>
+      <h3>Starships: {{ results.starships }}</h3> <br>
+    </div>
+
+
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <script src="./assets/js/script.js" charset="utf-8"></script>
+  </body>
+</html>
