@@ -1,137 +1,163 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>My first Vue app</title>
-    <script src="https://unpkg.com/vue"></script>
+    <title>Star Wars Character Generator</title>
+    <!-- <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet"> -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/css/materialize.min.css">
+    <link rel="stylesheet" type= "text/css" href="./assets/css/stylesheet.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   </head>
+
   <body>
 
-    <div id="starWarsChar">
-      <h1>Name: {{ results.name }}</h1><br>
-      <!-- <img :src="results.image"/> -->
-      <!-- <img :src="results.bgImage"/> -->
-
-      <div v-if="results.species.name">
-
-        <div v-if="results.species.name !='none'">
-          <div v-if="results.species.name !='unknown'">
-            <div v-if="results.species.name !='n/a'">
-              <h3>Species: {{ results.species.name }}</h3> <br>
-            </div>
-          </div>
-        </div>
-
-        <div v-if="results.species.classification !='none'">
-          <div v-if="results.species.classification !='unknown'">
-            <div v-if="results.species.classification !='n/a'">
-              <h3>Species Classification: {{ results.species.classification }}</h3> <br>
-            </div>
-          </div>
-        </div>
-
-        <div v-if="results.species.language !='none'">
-          <div v-if="results.species.language !='unknown'">
-            <div v-if="results.species.language !='n/a'">
-              <h3>Spoken Language: {{ results.species.language }}</h3> <br>
-            </div>
-          </div>
-        </div>
-
-      </div>
-
-      <div v-if="results.gender !='none'">
-        <div v-if="results.gender !='unknown'">
-          <div v-if="results.gender !='n/a'">
-            <h3>Gender: {{ results.gender }}</h3> <br>
-          </div>
-        </div>
-      </div>
-
-      <div v-if="results.height !='none'">
-        <div v-if="results.height !='unknown'">
-          <div v-if="results.height !='n/a'">
-            <h3>Height: {{ results.height }} cm</h3> <br>
-          </div>
-        </div>
-      </div>
-
-      <div v-if="results.mass !='none'">
-        <div v-if="results.mass !='unknown'">
-          <div v-if="results.mass !='n/a'">
-            <h3>Mass: {{ results.mass }} kg</h3> <br>
-          </div>
-        </div>
-      </div>
-
-      <div v-if="results.birth_year !='none'">
-        <div v-if="results.birth_year !='unknown'">
-          <div v-if="results.birth_year !='n/a'">
-            <h3>Birth Year: {{ results.birth_year }}</h3> <br>
-          </div>
-        </div>
-      </div>
-
-      <div v-if="results.eye_color !='none'">
-        <div v-if="results.eye_color !='unknown'">
-          <div v-if="results.eye_color !='n/a'">
-            <h3>Eye Color: {{ results.eye_color }}</h3> <br>
-          </div>
-        </div>
-      </div>
-
-      <div v-if="results.skin_color !='none'">
-        <div v-if="results.skin_color !='unknown'">
-          <div v-if="results.skin_color !='n/a'">
-            <h3>Skin Color: {{ results.skin_color }}</h3> <br>
-          </div>
-        </div>
-      </div>
-
-      <div v-if="results.hair_color !='none'">
-        <div v-if="results.hair_color !='unknown'">
-          <div v-if="results.hair_color !='n/a'">
-            <h3>Hair Color: {{ results.hair_color }}</h3> <br>
-          </div>
-        </div>
-      </div>
-
-      <div v-if="results.homeworld">
-        <div v-if="results.homeworld.name !='none'">
-          <div v-if="results.homeworld.name !='unknown'">
-            <div v-if="results.homeworld.name !='n/a'">
-              <h3>Homeworld: {{ results.homeworld.name }}</h3> <br>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <div v-if="results.vehicle1">
-        <h3>Vehicle 1: {{ results.vehicle1.name }}</h3>
-        <h3>Vehicle 1 Model Name: {{ results.vehicle1.model }}</h3>
-        <h3>Vehicle 1 Max Speed: {{ results.vehicle1.max_atmosphering_speed }}</h3> <br>
-      </div>
-
-      <div v-if="results.vehicle2">
-        <h3>Vehicle 2: {{ results.vehicle2.name }}</h3>
-        <h3>Vehicle 2 Model Name: {{ results.vehicle2.model }}</h3>
-        <h3>Vehicle 2 Max Speed: {{ results.vehicle2.max_atmosphering_speed }}</h3> <br><br>
-      </div>
-
-      <div v-if="results.starship1">
-        <h3>Starship 1: {{ results.starship1.name }}</h3>
-        <h3>Starship 1 Model : {{ results.starship1.model }}</h3>
-        <h3>Starship 1 Max Speed: {{ results.starship1.max_atmosphering_speed }}<br><br>
-      </div>
-
-      <div v-if="results.starship2">
-        <h3>Starship 2: {{ results.starship2.name }}</h3>
-        <h3>Starship 2 Model : {{ results.starship2.model }}</h3>
-        <h3>Starship 2 Max Speed: {{ results.starship2.max_atmosphering_speed }}<br>
-      </div>
-
+  <div class="row center-align black">
+        <a id="logo-container" href="/" class="white-text">
+          <img src="./assets/images/logo.png" alt="brand-logo" id="brandLogo"></img>
+        </a>
     </div>
 
+  <div class="row" id="middleSection">
+    <div class="container">
+    <div class="row">
+      <div id="starWarsChar" class="col s6">
+        <img id="charImage" :src="results.image"/>
+      <div>
+
+      <div id="starWarsChar" class="col s6">
+          <h4>{{ results.name }}</h4><br>
+          <div v-if="results.gender !='none'">
+            <div v-if="results.gender !='unknown'">
+              <div v-if="results.gender !='n/a'">
+                <p>Gender: {{ results.gender }}</p> <br>
+              </div>
+            </div>
+          </div>
+
+        <div v-if="results.species.name">
+          <div v-if="results.species.name !='none'">
+            <div v-if="results.species.name !='unknown'">
+              <div v-if="results.species.name !='n/a'">
+                <p>Species: {{ results.species.name }}, {{ results.species.classification }}</p> <br>
+              </div>
+            </div>
+          </div>
+
+          <!-- <div v-if="results.species.classification !='none'">
+            <div v-if="results.species.classification !='unknown'">
+              <div v-if="results.species.classification !='n/a'">
+                <p>Species Classification: {{ results.species.classification }}<p> <br>
+              </div>
+            </div>
+          </div> -->
+
+          <div v-if="results.species.language !='none'">
+            <div v-if="results.species.language !='unknown'">
+              <div v-if="results.species.language !='n/a'">
+                <p>Spoken Language: {{ results.species.language }}</p> <br>
+              </div>
+            </div>
+          </div>
+
+        </div>
+
+
+        <div v-if="results.height !='none'">
+          <div v-if="results.height !='unknown'">
+            <div v-if="results.height !='n/a'">
+              <p>Height: {{ results.height }}cm</p> <br>
+            </div>
+          </div>
+        </div>
+
+        <div v-if="results.mass !='none'">
+          <div v-if="results.mass !='unknown'">
+            <div v-if="results.mass !='n/a'">
+              <p>Weight: {{ results.mass }}kg</p> <br>
+            </div>
+          </div>
+        </div>
+
+        <div v-if="results.birth_year !='none'">
+          <div v-if="results.birth_year !='unknown'">
+            <div v-if="results.birth_year !='n/a'">
+              <p>Birth Year: {{ results.birth_year }}<p> <br>
+            </div>
+          </div>
+        </div>
+
+        <div v-if="results.eye_color !='none'">
+          <div v-if="results.eye_color !='unknown'">
+            <div v-if="results.eye_color !='n/a'">
+              <p>Eye Color: {{ results.eye_color }}<p> <br>
+            </div>
+          </div>
+        </div>
+
+        <div v-if="results.skin_color !='none'">
+          <div v-if="results.skin_color !='unknown'">
+            <div v-if="results.skin_color !='n/a'">
+              <p>Skin Color: {{ results.skin_color }}<p> <br>
+            </div>
+          </div>
+        </div>
+
+        <div v-if="results.hair_color !='none'">
+          <div v-if="results.hair_color !='unknown'">
+            <div v-if="results.hair_color !='n/a'">
+              <p>Hair Color: {{ results.hair_color }}<p> <br>
+            </div>
+          </div>
+        </div>
+
+        <div v-if="results.homeworld">
+          <div v-if="results.homeworld.name !='none'">
+            <div v-if="results.homeworld.name !='unknown'">
+              <div v-if="results.homeworld.name !='n/a'">
+                <p>Homeworld: {{ results.homeworld.name }}<p> <br>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div v-if="results.vehicle1">
+          <p>Vehicle 1: {{ results.vehicle1.name }}<p>
+          <p>Vehicle 1 Model Name: {{ results.vehicle1.model }}<p>
+          <p>Vehicle 1 Max Speed: {{ results.vehicle1.max_atmosphering_speed }}<p> <br>
+        </div>
+
+        <div v-if="results.vehicle2">
+          <p>Vehicle 2: {{ results.vehicle2.name }}<p>
+          <p>Vehicle 2 Model Name: {{ results.vehicle2.model }}<p>
+          <p>Vehicle 2 Max Speed: {{ results.vehicle2.max_atmosphering_speed }}<p> <br><br>
+        </div>
+
+        <div v-if="results.starship1">
+          <p>Starship 1: {{ results.starship1.name }}<p>
+          <p>Starship 1 Model : {{ results.starship1.model }}<p>
+          <p>Starship 1 Max Speed: {{ results.starship1.max_atmosphering_speed }}<br><br>
+        </div>
+
+        <div v-if="results.starship2">
+          <p>Starship 2: {{ results.starship2.name }}<p>
+          <p>Starship 2 Model : {{ results.starship2.model }}<p>
+          <p>Starship 2 Max Speed: {{ results.starship2.max_atmosphering_speed }}<br>
+        </div>
+      </div>
+    </div>
+    </div>
+  </div>
+
+    <footer class="page-footer black">
+      <div class="footer-copyright">
+          <div class="container center-align">
+          Made by Li Yuan, artwork by Derek Laufman
+          </div>
+        </div>
+      </footer>
     <!-- <script src="https://unpkg.com/axios/dist/axios.min.js"></script> -->
+    <script type="text/javascript" src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+    <script src="https://unpkg.com/vue"></script>
     <script src="./assets/js/script.js" charset="utf-8"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/js/materialize.min.js"></script>
   </body>
 </html>

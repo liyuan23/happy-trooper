@@ -1,0 +1,40 @@
+header {
+  align-content: center;
+  font-family: starJedi, sans-serif;
+  background-color: black;
+}
+
+body {
+  font-family: starJedi, sans-serif;
+  color: black;
+}
+
+@font-face {
+  font-family: starJedi;
+  src: url('../fonts/star_jedi/starjedi/Starjedi.ttf');
+}
+
+#brandLogo {
+  height: 123px;
+  width: 250px;
+  font-size: 60px;
+}
+
+#logo-container {
+  font-size: 28px;
+}
+
+#middleSection{
+  background-image: url("../images/bgimage.jpg");
+  background-repeat: no-repeat;
+  background-size: 1440px 603px;
+}
+
+#charImage {
+  height: 563px;
+  width: 434.5px;
+}
+
+.row {
+  margin-bottom: 0px !important;
+}
