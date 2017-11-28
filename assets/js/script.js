@@ -22,59 +22,59 @@ var starWC = new Vue({
     const characters = [
       {
         url: 'https://swapi.co/api/people/1/',
-        image: '/assets/images/luke.jpg',
-        backgroundImage: '/assets/images/luke1.jpg'
+        image: '/assets/images/1.jpg',
+        bgImage: '/assets/images/bg1.jpg'
       },
       {
         url: 'https://swapi.co/api/people/3/',
-        image: '/assets/images/luke.jpg',
-        backgroundImage: '/assets/images/luke1.jpg'
+        image: '/assets/images/2.jpg',
+        bgImage: '/assets/images/bg2.jpg'
       },
       {
         url: 'https://swapi.co/api/people/5/',
-        image: '/assets/images/luke.jpg',
-        backgroundImage: '/assets/images/luke1.jpg'
+        image: '/assets/images/3.jpg',
+        bgImage: '/assets/images/bg3.jpg'
       },
       {
         url: 'https://swapi.co/api/people/13/',
-        image: '/assets/images/luke.jpg',
-        backgroundImage: '/assets/images/luke1.jpg'
+        image: '/assets/images/4.jpg',
+        bgImage: '/assets/images/bg4.jpg'
       },
       {
         url: 'https://swapi.co/api/people/14/',
-        image: '/assets/images/luke.jpg',
-        backgroundImage: '/assets/images/luke1.jpg'
+        image: '/assets/images/5.jpg',
+        bgImage: '/assets/images/bg5.jpg'
       },
       {
         url: 'https://swapi.co/api/people/27/',
-        image: '/assets/images/luke.jpg',
-        backgroundImage: '/assets/images/luke1.jpg'
+        image: '/assets/images/6.jpg',
+        bgImage: '/assets/images/bg6.jpg'
       },
-      // {
-      //   url: 'https://swapi.co/api/people/84/',
-      //   image: '/assets/images/luke.jpg',
-      //   backgroundImage: '/assets/images/luke1.jpg'
-      // },
-      // {
-      //   url: 'https://swapi.co/api/people/85/',
-      //   image: '/assets/images/luke.jpg',
-      //   backgroundImage: '/assets/images/luke1.jpg'
-      // },
-      // {
-      //   url: 'https://swapi.co/api/people/86/',
-      //   image: '/assets/images/luke.jpg',
-      //   backgroundImage: '/assets/images/luke1.jpg'
-      // },
-      // {
-      //   url: 'https://swapi.co/api/people/87/',
-      //   image: '/assets/images/luke.jpg',
-      //   backgroundImage: '/assets/images/luke1.jpg'
-      // },
-      // {
-      //   url: 'https://swapi.co/api/people/88/',
-      //   image: '/assets/images/luke.jpg',
-      //   backgroundImage: '/assets/images/luke1.jpg'
-      // }
+      {
+        url: 'https://swapi.co/api/people/84/',
+        image: '/assets/images/7.jpg',
+        bgImage: '/assets/images/bg7.jpg'
+      },
+      {
+        url: 'https://swapi.co/api/people/85/',
+        image: '/assets/images/8.jpg',
+        bgImage: '/assets/images/bg8.jpg'
+      },
+      {
+        url: 'https://swapi.co/api/people/86/',
+        image: '/assets/images/9.jpg',
+        bgImage: '/assets/images/bg9.jpg'
+      },
+      {
+        url: 'https://swapi.co/api/people/87/',
+        image: '/assets/images/10.jpg',
+        bgImage: '/assets/images/bg10.jpg'
+      },
+      {
+        url: 'https://swapi.co/api/people/88/',
+        image: '/assets/images/11.jpg',
+        bgImage: '/assets/images/bg11.jpg'
+      }
     ]
 
     // for (var key in this.results) {
@@ -86,7 +86,7 @@ var starWC = new Vue({
     .then(response => { return response.json() })
     .then(data => {
       data.image = characters[index].image
-      data.backgroundImage = characters[index].backgroundImage
+      data.bgImage = characters[index].bgImage
       this.results = data
       console.log(this.results)
     })
