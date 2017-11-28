@@ -10,84 +10,116 @@
 
   <body>
 
-  <div class="row center-align black">
-        <a id="logo-container" href="/" class="white-text">
-          <img src="./assets/images/logo.png" alt="brand-logo" id="brandLogo"></img>
-        </a>
-    </div>
+  <div class="row center-align black" id="header">
+    <a id="logo-container" href="/" class="white-text">
+      <img src="./assets/images/logo.png" alt="brand-logo" id="brandLogo"></img>
+      <br>
+    </a>
+  </div>
 
   <div class="row" id="middleSection">
-    <div class="row container">
-      <div id="starWarsChar" class="col s6">
+    <div class="row container valign-wrapper" id="starWarsChar">
+      <div class="col s5 center-align">
+
         <img id="charImage" :src="results.image"/>
+
+        <div class="chip name">
+          {{ results.name }}
+        </div>
+
+        <div class="row center-align">
+            <div v-if="results.gender !='none'">
+              <div v-if="results.gender !='unknown'">
+                <div v-if="results.gender !='n/a'">
+                  <div class="col s4">
+                  <div class="chip chipfont">
+                    {{ results.gender }}
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col s4">
+            <div v-if="results.height !='none'">
+              <div v-if="results.height !='unknown'">
+                <div v-if="results.height !='n/a'">
+                  <div class="chip chipfont">
+                    {{ results.height }}cm
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col s4">
+            <div v-if="results.mass !='none'">
+              <div v-if="results.mass !='unknown'">
+                <div v-if="results.mass !='n/a'">
+                  <div class="chip chipfont">
+                    {{ results.mass }}kg
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
 
-      <div id="starWarsChar" class="col s6">
-          <h4>{{ results.name }}</h4><br>
-          <div v-if="results.gender !='none'">
-            <div v-if="results.gender !='unknown'">
-              <div v-if="results.gender !='n/a'">
-                <p>Gender: {{ results.gender }}</p> <br>
+      <div class="col s7 white-text details grey darken-4">
+
+      <div class="row">
+        <div class="col s6">
+          <div v-if="results.species.name">
+            <div v-if="results.species.name !='none'">
+              <div v-if="results.species.name !='unknown'">
+                <div v-if="results.species.name !='n/a'">
+                  <p>Species:</p>
+                    <div class="chip">
+                      {{ results.species.name }}
+                    </div>
+                    <div class="chip">
+                      {{ results.species.classification }}
+                    </div>
+                </div>
               </div>
             </div>
           </div>
+        </div>
 
-        <div v-if="results.species.name">
-          <div v-if="results.species.name !='none'">
-            <div v-if="results.species.name !='unknown'">
-              <div v-if="results.species.name !='n/a'">
-                <p>Species: {{ results.species.name }}, {{ results.species.classification }}</p> <br>
-              </div>
-            </div>
-          </div>
-
-          <!-- <div v-if="results.species.classification !='none'">
-            <div v-if="results.species.classification !='unknown'">
-              <div v-if="results.species.classification !='n/a'">
-                <p>Species Classification: {{ results.species.classification }}<p> <br>
-              </div>
-            </div>
-          </div> -->
-
+        <div class="col s6">
           <div v-if="results.species.language !='none'">
             <div v-if="results.species.language !='unknown'">
               <div v-if="results.species.language !='n/a'">
-                <p>Spoken Language: {{ results.species.language }}</p> <br>
+                <p>Spoken Language:</p>
+                  <div class="chip">
+                    {{ results.species.language }}
+                  </div>
               </div>
             </div>
           </div>
-
         </div>
 
+      </div>
 
-        <div v-if="results.height !='none'">
-          <div v-if="results.height !='unknown'">
-            <div v-if="results.height !='n/a'">
-              <p>Height: {{ results.height }}cm</p> <br>
-            </div>
-          </div>
-        </div>
-
-        <div v-if="results.mass !='none'">
-          <div v-if="results.mass !='unknown'">
-            <div v-if="results.mass !='n/a'">
-              <p>Weight: {{ results.mass }}kg</p> <br>
-            </div>
-          </div>
-        </div>
 
         <div v-if="results.birth_year !='none'">
           <div v-if="results.birth_year !='unknown'">
             <div v-if="results.birth_year !='n/a'">
-              <p>Birth Year: {{ results.birth_year }}<p> <br>
+              <p>Birth Year</p>
+                <div class="chip">
+                  {{ results.birth_year }}
+                </div>
             </div>
           </div>
         </div>
 
+        <p>Physical Features:</p>
         <div v-if="results.eye_color !='none'">
           <div v-if="results.eye_color !='unknown'">
             <div v-if="results.eye_color !='n/a'">
-              <p>Eye Color: {{ results.eye_color }}<p> <br>
+              <div class="chip">
+                {{ results.eye_color }} eyes
+              </div>
+              <br>
             </div>
           </div>
         </div>
@@ -95,7 +127,9 @@
         <div v-if="results.skin_color !='none'">
           <div v-if="results.skin_color !='unknown'">
             <div v-if="results.skin_color !='n/a'">
-              <p>Skin Color: {{ results.skin_color }}<p> <br>
+              <div class="chip">
+                {{ results.skin_color }} skin
+              </div>
             </div>
           </div>
         </div>
@@ -103,7 +137,9 @@
         <div v-if="results.hair_color !='none'">
           <div v-if="results.hair_color !='unknown'">
             <div v-if="results.hair_color !='n/a'">
-              <p>Hair Color: {{ results.hair_color }}<p> <br>
+              <div class="chip">
+                {{ results.hair_color }} hair
+              </div>
             </div>
           </div>
         </div>
@@ -112,34 +148,45 @@
           <div v-if="results.homeworld.name !='none'">
             <div v-if="results.homeworld.name !='unknown'">
               <div v-if="results.homeworld.name !='n/a'">
-                <p>Homeworld: {{ results.homeworld.name }}<p> <br>
+                <p>Homeworld:</p>
+                <div class="chip">
+                  {{ results.homeworld.name }}
+                </div>
               </div>
             </div>
           </div>
         </div>
 
         <div v-if="results.vehicle1">
-          <p>Vehicle 1: {{ results.vehicle1.name }}<p>
-          <p>Vehicle 1 Model Name: {{ results.vehicle1.model }}<p>
-          <p>Vehicle 1 Max Speed: {{ results.vehicle1.max_atmosphering_speed }}<p> <br>
+          <p>Vehicle 1:</p>
+          <img id="charImage" :src="results.vehicle1Image"/>
+          <div class="chip">
+            {{ results.vehicle1.name }}
+          </div>
         </div>
 
         <div v-if="results.vehicle2">
-          <p>Vehicle 2: {{ results.vehicle2.name }}<p>
-          <p>Vehicle 2 Model Name: {{ results.vehicle2.model }}<p>
-          <p>Vehicle 2 Max Speed: {{ results.vehicle2.max_atmosphering_speed }}<p> <br><br>
+          <p>Vehicle 2:</p>
+          <img id="charImage" :src="results.vehicle2Image"/>
+          <div class="chip">
+            {{ results.vehicle2.name }}
+          </div>
         </div>
 
         <div v-if="results.starship1">
-          <p>Starship 1: {{ results.starship1.name }}<p>
-          <p>Starship 1 Model : {{ results.starship1.model }}<p>
-          <p>Starship 1 Max Speed: {{ results.starship1.max_atmosphering_speed }}<br><br>
+          <p>Starship 1:</p>
+          <img id="charImage" :src="results.starship1Image"/>
+          <div class="chip">
+            {{ results.starship1.name }}
+          </div>
         </div>
 
         <div v-if="results.starship2">
-          <p>Starship 2: {{ results.starship2.name }}<p>
-          <p>Starship 2 Model : {{ results.starship2.model }}<p>
-          <p>Starship 2 Max Speed: {{ results.starship2.max_atmosphering_speed }}<br>
+          <p>Starship 2:</p>
+          <img id="charImage" :src="results.starship2Image"/>
+          <div class="chip">
+            {{ results.starship2.name }}
+          </div>
         </div>
       </div>
     </div>

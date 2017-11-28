@@ -13,65 +13,61 @@ var starWC = new Vue({
       }
     }
 
-    // let characters = []
-    // let randomCharUrl, characterObj
-    let name, classification, language
-
     const characters = [
-      {
-        url: 'https://swapi.co/api/people/1/',
-        image: '/assets/images/1.png',
-        bgImage: '/assets/images/bg1.jpg'
-      }
+      // {
+      //   url: 'https://swapi.co/api/people/1/',
+      //   image: '/assets/images/1.png',
+      //   vehicle1Image: '/assets/images/t47.png',
+      //   vehicle2Image: '/assets/images/74z.png',
+      //   starship1Image: '/assets/images/t65.png',
+      //   starship2Image: '/assets/images/is.png'
+      // },
       // {
       //   url: 'https://swapi.co/api/people/3/',
-      //   image: '/assets/images/2.png',
-      //   bgImage: '/assets/images/bg2.jpg'
+      //   image: '/assets/images/2.png'
       // },
-      // {
-      //   url: 'https://swapi.co/api/people/5/',
-      //   image: '/assets/images/3.png',
-      //   bgImage: '/assets/images/bg3.jpg'
-      // },
+      {
+        url: 'https://swapi.co/api/people/5/',
+        image: '/assets/images/3.png',
+        vehicle1Image: '/assets/images/7az.png'
+      },
       // {
       //   url: 'https://swapi.co/api/people/13/',
       //   image: '/assets/images/4.png',
-      //   bgImage: '/assets/images/bg4.jpg'
+      //   vehicle1Image: '/assets/images/atst.png',
+      //   starship1Image: '/assets/images/mf.png',
+      //   starship2Image: '/assets/images/is.png'
       // },
       // {
       //   url: 'https://swapi.co/api/people/14/',
       //   image: '/assets/images/5.png',
-      //   bgImage: '/assets/images/bg5.jpg'
+      //   starship1Image: '/assets/images/mf.png',
+      //   starship2Image: '/assets/images/is.png'
       // },
       // {
       //   url: 'https://swapi.co/api/people/27/',
-      //   image: '/assets/images/6.jpg',
-      //   bgImage: '/assets/images/bg6.jpg'
+      //   image: '/assets/images/6.jpg'
       // },
       // {
       //   url: 'https://swapi.co/api/people/84/',
-      //   image: '/assets/images/7.jpg',
-      //   bgImage: '/assets/images/bg7.jpg'
+      //   image: '/assets/images/7.jpg'
       // },
       // {
       //   url: 'https://swapi.co/api/people/85/',
-      //   image: '/assets/images/8.jpg',
-      //   bgImage: '/assets/images/bg8.jpg'
+      //   image: '/assets/images/8.jpg'
       // },
       // {
       //   url: 'https://swapi.co/api/people/86/',
-      //   image: '/assets/images/9.jpg',
-      //   bgImage: '/assets/images/bg9.jpg'
+      //   image: '/assets/images/9.png',
+      //   starship1Image: '/assets/images/mf.png'
       // },
-      // {
+      // // {
       //   url: 'https://swapi.co/api/people/87/',
-      //   image: '/assets/images/10.jpg',
-      //   bgImage: '/assets/images/bg10.jpg'
+      //   image: '/assets/images/10.jpg'
       // },
       // {
       //   url: 'https://swapi.co/api/people/88/',
-      //   image: '/assets/images/11.jpg',
-      //   bgImage: '/assets/images/bg11.jpg'
+      //   image: '/assets/images/11.jpg'
       // }
     ]
 
@@ -84,7 +80,10 @@ var starWC = new Vue({
     .then(response => { return response.json() })
     .then(data => {
       data.image = characters[index].image
-      data.bgImage = characters[index].bgImage
+      data.vehicle1Image = characters[index].vehicle1Image
+      data.vehicle2Image = characters[index].vehicle2Image
+      data.starship1Image = characters[index].starship1Image
+      data.starship2Image = characters[index].starship2Image
       this.results = data
       console.log(this.results)
     })
