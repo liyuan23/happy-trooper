@@ -8,24 +8,36 @@
 
     <div id="starWarsChar">
       <h1>Name: {{ results.name }}</h1><br>
-      <!-- <img v-bind:src="{{ results.image }}"/> -->
-      <h3>Image: {{ results.image }}</h3> <br>
-      <h3>Species: {{ results.speciesName }}</h3> <br>
+      <!-- <img :src="results.image"/> -->
+      <!-- <img :src="results.backgroundImage"/> -->
+      <h3>Species: {{ results.species.name }}</h3> <br>
+      <h3>Language: {{ results.species.language }}</h3> <br>
+      <h3>Classification: {{ results.species.classification }}</h3> <br>
       <h3>Gender: {{ results.gender }}</h3> <br>
       <h3>Height: {{ results.height }} cm</h3> <br>
-      <h3>Mass: {{ results.mass }}</h3> <br>
+      <h3>Mass: {{ results.mass }} kg</h3> <br>
       <h3>Birth Year: {{ results.birth_year }}</h3> <br>
       <h3>Eye Color: {{ results.eye_color }}</h3> <br>
       <h3>Skin Color: {{ results.skin_color }}</h3> <br>
       <h3>Hair Color: {{ results.hair_color }}</h3> <br>
-      <h3>Homeworld: {{ results.homeworld }}</h3> <br>
+      <h3>Homeworld: {{ results.homeworld.name }}</h3> <br><br>
 
-      <h3>Vehicles: {{ results.vehicles }}</h3> <br>
-      <h3>Starships: {{ results.starships }}</h3> <br>
+      <!-- <div v-if="random === todo.text"> -->
+      <h3>Vehicle 1: {{ results.vehicle1.name }}</h3>
+      <h3>Vehicle 1 Model Name: {{ results.vehicle1.model }}</h3>
+      <h3>Vehicle 1 Max Speed: {{ results.vehicle1.max_atmosphering_speed }}</h3> <br>
+      <h3>Vehicle 2: {{ results.vehicle2.name }}</h3>
+      <h3>Vehicle 2 Model Name: {{ results.vehicle2.model }}</h3>
+      <h3>Vehicle 2 Max Speed: {{ results.vehicle2.max_atmosphering_speed }}</h3> <br><br>
+
+      <h3>Starship 1: {{ results.starship1.name }}</h3>
+      <h3>Starship 1 Model : {{ results.starship1.model }}</h3> <br>
+      <h3>Starship 2: {{ results.starship2.name }}</h3>
+      <h3>Starship 2 Model : {{ results.starship2.model }}</h3> <br>
     </div>
 
 
-    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <!-- <script src="https://unpkg.com/axios/dist/axios.min.js"></script> -->
     <script src="./assets/js/script.js" charset="utf-8"></script>
   </body>
 </html>

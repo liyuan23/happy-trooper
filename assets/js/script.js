@@ -17,34 +17,85 @@ var starWC = new Vue({
 
     // let characters = []
     // let randomCharUrl, characterObj
+    let name, classification, language
 
     const characters = [
       {
         url: 'https://swapi.co/api/people/1/',
-        image: '/assets/images/luke.jpg'
-      },
-      {
-        url: 'https://swapi.co/api/people/1/',
-        image: '/assets/images/luke.jpg'
-      },
-      {
-        url: 'https://swapi.co/api/people/1/',
-        image: '/assets/images/luke.jpg'
-      },
-      {
-        url: 'https://swapi.co/api/people/1/',
-        image: '/assets/images/luke.jpg'
+        image: '/assets/images/luke.jpg',
+        backgroundImage: '/assets/images/luke1.jpg'
       }
+      // {
+      //   url: 'https://swapi.co/api/people/3/',
+      //   image: '/assets/images/luke.jpg',
+      //   backgroundImage: '/assets/images/luke1.jpg'
+      // }
+      // {
+      //   url: 'https://swapi.co/api/people/5/',
+      //   image: '/assets/images/luke.jpg',
+      //   backgroundImage: '/assets/images/luke1.jpg'
+      // },
+      // {
+      //   url: 'https://swapi.co/api/people/13/',
+      //   image: '/assets/images/luke.jpg',
+      //   backgroundImage: '/assets/images/luke1.jpg'
+      // }
     ]
+
+    // for (var key in this.results) {
+    //   this.results[key][0].toUpperCase()
+    // }
 
     let index = Math.floor(Math.random() * characters.length)
     fetch(characters[index].url, options)
     .then(response => { return response.json() })
     .then(data => {
       data.image = characters[index].image
+      data.backgroundImage = characters[index].backgroundImage
       this.results = data
+      console.log(this.results)
     })
+    .then(() => {
+      // fetching species
+      fetch(this.results.species[0], options)
+      .then(response => { return response.json() })
+      .then(species => {
+        this.results.species = species
+      })
+      // fetching homeworld
+      fetch(this.results.homeworld, options)
+      .then(response => { return response.json() })
+      .then(homeworld => {
+        this.results.homeworld = homeworld
+      })
+      // fetching vehicles
+      fetch(this.results.vehicles[0], options)
+      .then(response => { return response.json() })
+      .then(vehicle1 => {
+        this.results.vehicle1 = vehicle1
+      })
+      fetch(this.results.vehicles[1], options)
+      .then(response => { return response.json() })
+      .then(vehicle2 => {
+        this.results.vehicle2 = vehicle2
+      })
+      // fetching starships
+      fetch(this.results.starships[0], options)
+      .then(response => { return response.json() })
+      .then(starship1 => {
+        this.results.starship1 = starship1
+      })
+      fetch(this.results.starships[1], options)
+      .then(response => { return response.json() })
+      .then(starship2 => {
+        this.results.starship2 = starship2
+      })
+    })
+      // if n/a then hide
+      // convert all first char to uppercase
 
+
+// USING FETCH CALL API RANDOMISED
     // // fetching list of characters and storing
     // fetch(url, options)
     // .then(response => {
@@ -73,6 +124,7 @@ var starWC = new Vue({
     //   })
     // })
 
+// USING AXIOS CALL API RANDOMISED, rmb to add in axios in html
     // axios.get("https://swapi.co/api/films/7/")
     // .then(response => {
     //   // console.log(response.data.characters)
