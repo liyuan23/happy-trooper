@@ -14,14 +14,14 @@ var starWC = new Vue({
     }
 
     const characters = [
-      // {
-      //   url: 'https://swapi.co/api/people/1/',
-      //   image: './assets/images/1.jpg',
-      //   vehicle1Image: './assets/images/t47.jpg',
-      //   vehicle2Image: './assets/images/74z.jpg',
-      //   starship1Image: './assets/images/t65.jpg',
-      //   starship2Image: './assets/images/is.jpg'
-      // },
+      {
+        url: 'https://swapi.co/api/people/1/',
+        image: './assets/images/1.jpg',
+        vehicle1Image: './assets/images/t47.jpg',
+        vehicle2Image: './assets/images/74z.jpg',
+        starship1Image: './assets/images/t65.jpg',
+        starship2Image: './assets/images/is.jpg'
+      },
       // {
       //   url: 'https://swapi.co/api/people/3/',
       //   image: './assets/images/2.jpg'
@@ -29,7 +29,7 @@ var starWC = new Vue({
       // {
       //   url: 'https://swapi.co/api/people/5/',
       //   image: './assets/images/3.jpg',
-      //   vehicle1Image: './assets/images/7az.jpg'
+      //   vehicle1Image: './assets/images/74z.jpg'
       // },
       // {
       //   url: 'https://swapi.co/api/people/13/',
@@ -38,12 +38,12 @@ var starWC = new Vue({
       //   starship1Image: './assets/images/mf.jpg',
       //   starship2Image: './assets/images/is.jpg'
       // },
-      {
-        url: 'https://swapi.co/api/people/14/',
-        image: './assets/images/5.jpg',
-        starship1Image: './assets/images/mf.jpg',
-        starship2Image: './assets/images/is.jpg'
-      },
+      // {
+      //   url: 'https://swapi.co/api/people/14/',
+      //   image: './assets/images/5.jpg',
+      //   starship1Image: './assets/images/mf.jpg',
+      //   starship2Image: './assets/images/is.jpg'
+      // },
       // {
       //   url: 'https://swapi.co/api/people/27/',
       //   image: './assets/images/6.jpg'
