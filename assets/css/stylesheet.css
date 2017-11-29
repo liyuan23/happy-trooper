@@ -2,16 +2,9 @@
   align-content: center;
   background-image: url("../images/star.jpg");
   margin-bottom: 0px;
-}
-
-@font-face {
-  font-family: deathStar;
-  src: url('../fonts/deathstar/Death Star.otf');
-}
-
-@font-face {
-  font-family: distantGalaxy;
-  src: url('../fonts/distantGalaxy/SFDistantGalaxy.ttf');
+  font-family: starJedi, sans-serif;
+  font-size: 20px;
+  letter-spacing: 3px;
 }
 
 @font-face {
