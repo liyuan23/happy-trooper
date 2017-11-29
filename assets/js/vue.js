@@ -22,53 +22,53 @@ var starWC = new Vue({
         starship1Image: './assets/images/t65.jpg',
         starship2Image: './assets/images/is.jpg'
       },
-      // {
-      //   url: 'https://swapi.co/api/people/3/',
-      //   image: './assets/images/2.jpg'
-      // },
-      // {
-      //   url: 'https://swapi.co/api/people/5/',
-      //   image: './assets/images/3.jpg',
-      //   vehicle1Image: './assets/images/74z.jpg'
-      // },
-      // {
-      //   url: 'https://swapi.co/api/people/13/',
-      //   image: './assets/images/4.jpg',
-      //   vehicle1Image: './assets/images/atst.jpg',
-      //   starship1Image: './assets/images/mf.jpg',
-      //   starship2Image: './assets/images/is.jpg'
-      // },
-      // {
-      //   url: 'https://swapi.co/api/people/14/',
-      //   image: './assets/images/5.jpg',
-      //   starship1Image: './assets/images/mf.jpg',
-      //   starship2Image: './assets/images/is.jpg'
-      // },
-      // {
-      //   url: 'https://swapi.co/api/people/27/',
-      //   image: './assets/images/6.jpg'
-      // },
-      // {
-      //   url: 'https://swapi.co/api/people/84/',
-      //   image: './assets/images/7.jpg'
-      // },
-      // {
-      //   url: 'https://swapi.co/api/people/85/',
-      //   image: './assets/images/8.jpg'
-      // },
-      // {
-      //   url: 'https://swapi.co/api/people/86/',
-      //   image: './assets/images/9.jpg',
-      //   starship1Image: './assets/images/fighter.jpg'
-      // },
-      // {
-      //   url: 'https://swapi.co/api/people/87/',
-      //   image: './assets/images/10.jpg'
-      // },
-      // {
-      //   url: 'https://swapi.co/api/people/88/',
-      //   image: './assets/images/11.jpg'
-      // }
+      {
+        url: 'https://swapi.co/api/people/3/',
+        image: './assets/images/2.jpg'
+      },
+      {
+        url: 'https://swapi.co/api/people/5/',
+        image: './assets/images/3.jpg',
+        vehicle1Image: './assets/images/74z.jpg'
+      },
+      {
+        url: 'https://swapi.co/api/people/13/',
+        image: './assets/images/4.jpg',
+        vehicle1Image: './assets/images/atst.jpg',
+        starship1Image: './assets/images/mf.jpg',
+        starship2Image: './assets/images/is.jpg'
+      },
+      {
+        url: 'https://swapi.co/api/people/14/',
+        image: './assets/images/5.jpg',
+        starship1Image: './assets/images/mf.jpg',
+        starship2Image: './assets/images/is.jpg'
+      },
+      {
+        url: 'https://swapi.co/api/people/27/',
+        image: './assets/images/6.jpg'
+      },
+      {
+        url: 'https://swapi.co/api/people/84/',
+        image: './assets/images/7.jpg'
+      },
+      {
+        url: 'https://swapi.co/api/people/85/',
+        image: './assets/images/8.jpg'
+      },
+      {
+        url: 'https://swapi.co/api/people/86/',
+        image: './assets/images/9.jpg',
+        starship1Image: './assets/images/fighter.jpg'
+      },
+      {
+        url: 'https://swapi.co/api/people/87/',
+        image: './assets/images/10.jpg'
+      },
+      {
+        url: 'https://swapi.co/api/people/88/',
+        image: './assets/images/11.jpg'
+      }
     ]
 
     let index = Math.floor(Math.random() * characters.length)
