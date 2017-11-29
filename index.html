@@ -35,7 +35,7 @@
       <div class="col s7 white-text details grey darken-4">
 
       <div class="row">
-        <div class="col s6">
+        <div class="col s7">
 
           <div v-if="results.birth_year !='none'">
             <div v-if="results.birth_year !='unknown'">
@@ -48,49 +48,20 @@
             </div>
           </div>
 
-          <div v-if="results.homeworld">
-            <div v-if="results.homeworld.name !='none'">
-              <div v-if="results.homeworld.name !='unknown'">
-                <div v-if="results.homeworld.name !='n/a'">
-                  <span>Homeworld :</span>
-                  <div class="chip">
-                    {{ results.homeworld.name }}
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
+
 
           <div v-if="results.species.name">
             <div v-if="results.species.name !='none'">
               <div v-if="results.species.name !='unknown'">
                 <div v-if="results.species.name !='n/a'">
-                  <p>Species :</p>
+                  <span>Species :</span>
                     <div class="chip">
                       {{ results.species.name }}
-                    </div>
-                    <div class="chip">
-                      {{ results.species.classification }}
                     </div>
                 </div>
               </div>
             </div>
           </div>
-
-          <div v-if="results.species.language !='none'">
-            <div v-if="results.species.language !='unknown'">
-              <div v-if="results.species.language !='n/a'">
-                <p>Spoken Language :</p>
-                  <div class="chip">
-                    {{ results.species.language }}
-                  </div>
-              </div>
-            </div>
-          </div>
-
-      <!-- <p>Physical Features:</p> -->
-      <br>
-
 
           <div v-if="results.gender !='none'">
             <div v-if="results.gender !='unknown'">
@@ -158,8 +129,32 @@
             </div>
           </div>
 
+          <div v-if="results.homeworld">
+            <div v-if="results.homeworld.name !='none'">
+              <div v-if="results.homeworld.name !='unknown'">
+                <div v-if="results.homeworld.name !='n/a'">
+                  <span>Homeworld :</span>
+                  <div class="chip">
+                    {{ results.homeworld.name }}
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div v-if="results.species.language !='none'">
+            <div v-if="results.species.language !='unknown'">
+              <div v-if="results.species.language !='n/a'">
+                <span>Language :</span>
+                  <div class="chip">
+                    {{ results.species.language }}
+                  </div>
+              </div>
+            </div>
+          </div>
+
         </div>
-        <div class="col s6">
+        <div class="col s5">
           <div v-if="results.vehicle1">
             <p>Owned Vehicles :</p>
             <img class="car" :src="results.vehicle1Image"/><br>
