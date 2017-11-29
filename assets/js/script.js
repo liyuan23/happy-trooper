@@ -16,11 +16,11 @@ var starWC = new Vue({
     const characters = [
       {
         url: 'https://swapi.co/api/people/1/',
-        image: './assets/images/1.png',
-        vehicle1Image: './assets/images/t47.png',
-        vehicle2Image: './assets/images/74z.png',
-        starship1Image: './assets/images/t65.png',
-        starship2Image: './assets/images/is.png'
+        image: './assets/images/1.jpg',
+        vehicle1Image: './assets/images/t47.jpg',
+        vehicle2Image: './assets/images/74z.jpg',
+        starship1Image: './assets/images/t65.jpg',
+        starship2Image: './assets/images/is.jpg'
       }
       // {
       //   url: 'https://swapi.co/api/people/3/',
