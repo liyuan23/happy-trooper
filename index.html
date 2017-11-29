@@ -4,6 +4,7 @@
     <title>Star Wars Character Generator</title>
     <!-- <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet"> -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/css/materialize.min.css">
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:400,600,900" rel="stylesheet">
     <link rel="stylesheet" type= "text/css" href="./assets/css/stylesheet.css">
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   </head>
@@ -19,60 +20,52 @@
 
   <div class="row" id="middleSection">
     <div class="row container valign-wrapper" id="starWarsChar">
-      <div class="col s5 center-align">
+      <div class="col s5">
 
-        <img id="charImage" :src="results.image"/>
+        <img id="charImage" :src="results.image" class="center-align"/>
 
-        <div class="chip name">
+        <div class="chip name chipfont white grey-text text-darken-3 center-align">
           {{ results.name }}
         </div>
 
-        <div class="row center-align">
-            <div v-if="results.gender !='none'">
-              <div v-if="results.gender !='unknown'">
-                <div v-if="results.gender !='n/a'">
-                  <div class="col s4">
-                  <div class="chip chipfont">
-                    {{ results.gender }}
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="col s4">
-            <div v-if="results.height !='none'">
-              <div v-if="results.height !='unknown'">
-                <div v-if="results.height !='n/a'">
-                  <div class="chip chipfont">
-                    {{ results.height }}cm
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="col s4">
-            <div v-if="results.mass !='none'">
-              <div v-if="results.mass !='unknown'">
-                <div v-if="results.mass !='n/a'">
-                  <div class="chip chipfont">
-                    {{ results.mass }}kg
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
+
+
       </div>
 
       <div class="col s7 white-text details grey darken-4">
 
       <div class="row">
         <div class="col s6">
+
+          <div v-if="results.birth_year !='none'">
+            <div v-if="results.birth_year !='unknown'">
+              <div v-if="results.birth_year !='n/a'">
+                <span>Born :</span>
+                  <div class="chip">
+                    {{ results.birth_year }}
+                  </div>
+              </div>
+            </div>
+          </div>
+
+          <div v-if="results.homeworld">
+            <div v-if="results.homeworld.name !='none'">
+              <div v-if="results.homeworld.name !='unknown'">
+                <div v-if="results.homeworld.name !='n/a'">
+                  <span>Homeworld :</span>
+                  <div class="chip">
+                    {{ results.homeworld.name }}
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
           <div v-if="results.species.name">
             <div v-if="results.species.name !='none'">
               <div v-if="results.species.name !='unknown'">
                 <div v-if="results.species.name !='n/a'">
-                  <p>Species:</p>
+                  <p>Species :</p>
                     <div class="chip">
                       {{ results.species.name }}
                     </div>
@@ -83,117 +76,131 @@
               </div>
             </div>
           </div>
-        </div>
 
-        <div class="col s6">
           <div v-if="results.species.language !='none'">
             <div v-if="results.species.language !='unknown'">
               <div v-if="results.species.language !='n/a'">
-                <p>Spoken Language:</p>
+                <p>Spoken Language :</p>
                   <div class="chip">
                     {{ results.species.language }}
                   </div>
               </div>
             </div>
           </div>
-        </div>
 
+      <!-- <p>Physical Features:</p> -->
+      <br>
+
+
+          <div v-if="results.gender !='none'">
+            <div v-if="results.gender !='unknown'">
+              <div v-if="results.gender !='n/a'">
+                <span>Gender :</span>
+                <div class="chip">
+                  {{ results.gender }}
+                </div>
+              </div>
+            </div>
+          </div>
+          <div v-if="results.height !='none'">
+            <div v-if="results.height !='unknown'">
+              <div v-if="results.height !='n/a'">
+                <span>Height :</span>
+                <div class="chip">
+                  {{ results.height }}cm
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div v-if="results.mass !='none'">
+            <div v-if="results.mass !='unknown'">
+              <div v-if="results.mass !='n/a'">
+                <span>Mass :</span>
+                <div class="chip">
+                  {{ results.mass }}kg
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div v-if="results.eye_color !='none'">
+            <div v-if="results.eye_color !='unknown'">
+              <div v-if="results.eye_color !='n/a'">
+                <span>Eye Colour :</span>
+                <div class="chip">
+                  {{ results.eye_color }}
+                </div>
+                <br>
+              </div>
+            </div>
+          </div>
+
+          <div v-if="results.skin_color !='none'">
+            <div v-if="results.skin_color !='unknown'">
+              <div v-if="results.skin_color !='n/a'">
+                <span>Skin Colour :</span>
+                <div class="chip">
+                  {{ results.skin_color }}
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div v-if="results.hair_color !='none'">
+            <div v-if="results.hair_color !='unknown'">
+              <div v-if="results.hair_color !='n/a'">
+                <span>Hair Colour :</span>
+                <div class="chip">
+                  {{ results.hair_color }}
+                </div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+        <div class="col s6">
+          <div v-if="results.vehicle1">
+            <p>Owned Vehicles :</p>
+            <img class="car" :src="results.vehicle1Image"/><br>
+            <div class="chip">
+              {{ results.vehicle1.name }}
+            </div>
+          </div>
+
+          <div v-if="results.vehicle2">
+            <img class="car" :src="results.vehicle2Image"/><br>
+            <div class="chip">
+              {{ results.vehicle2.name }}
+            </div>
+          </div>
+
+          <div v-if="results.starship1">
+            <p>Owned Starships :</p>
+            <img class="car" :src="results.starship1Image"/><br>
+            <div class="chip">
+              {{ results.starship1.name }}
+            </div>
+          </div>
+
+          <div v-if="results.starship2">
+            <img class="car" :src="results.starship2Image"/><br>
+            <div class="chip">
+              {{ results.starship2.name }}
+            </div>
+          </div>
+
+        </div>
       </div>
+    </div>
 
 
-        <div v-if="results.birth_year !='none'">
-          <div v-if="results.birth_year !='unknown'">
-            <div v-if="results.birth_year !='n/a'">
-              <p>Birth Year</p>
-                <div class="chip">
-                  {{ results.birth_year }}
-                </div>
-            </div>
-          </div>
-        </div>
-
-        <p>Physical Features:</p>
-        <div v-if="results.eye_color !='none'">
-          <div v-if="results.eye_color !='unknown'">
-            <div v-if="results.eye_color !='n/a'">
-              <div class="chip">
-                {{ results.eye_color }} eyes
-              </div>
-              <br>
-            </div>
-          </div>
-        </div>
-
-        <div v-if="results.skin_color !='none'">
-          <div v-if="results.skin_color !='unknown'">
-            <div v-if="results.skin_color !='n/a'">
-              <div class="chip">
-                {{ results.skin_color }} skin
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <div v-if="results.hair_color !='none'">
-          <div v-if="results.hair_color !='unknown'">
-            <div v-if="results.hair_color !='n/a'">
-              <div class="chip">
-                {{ results.hair_color }} hair
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <div v-if="results.homeworld">
-          <div v-if="results.homeworld.name !='none'">
-            <div v-if="results.homeworld.name !='unknown'">
-              <div v-if="results.homeworld.name !='n/a'">
-                <p>Homeworld:</p>
-                <div class="chip">
-                  {{ results.homeworld.name }}
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <div v-if="results.vehicle1">
-          <p>Vehicle 1:</p>
-          <img id="charImage" :src="results.vehicle1Image"/>
-          <div class="chip">
-            {{ results.vehicle1.name }}
-          </div>
-        </div>
-
-        <div v-if="results.vehicle2">
-          <p>Vehicle 2:</p>
-          <img id="charImage" :src="results.vehicle2Image"/>
-          <div class="chip">
-            {{ results.vehicle2.name }}
-          </div>
-        </div>
-
-        <div v-if="results.starship1">
-          <p>Starship 1:</p>
-          <img id="charImage" :src="results.starship1Image"/>
-          <div class="chip">
-            {{ results.starship1.name }}
-          </div>
-        </div>
-
-        <div v-if="results.starship2">
-          <p>Starship 2:</p>
-          <img id="charImage" :src="results.starship2Image"/>
-          <div class="chip">
-            {{ results.starship2.name }}
-          </div>
-        </div>
       </div>
     </div>
   </div>
 
 
-    <footer class="page-footer #ffecb3-text">
+    <footer class="page-footer yellow-text ">
       <div class="container center-align">
         Made by <a href="https://github.com/liyuan23">Li Yuan</a>, artwork by various <a href="https://www.dereklaufman.com/star-wars/">$</a> fandoms
       </div>
